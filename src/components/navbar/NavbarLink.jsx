@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router';
 
 export const NavbarLink = ({ children, path }) => {
@@ -11,4 +12,9 @@ export const NavbarLink = ({ children, path }) => {
 			{children}
 		</Link>
 	);
+};
+
+NavbarLink.propTypes = {
+	children: PropTypes.node.isRequired,
+	path: PropTypes.string.isRequired,
 };
