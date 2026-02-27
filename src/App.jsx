@@ -2,9 +2,11 @@ import { Link } from 'react-router';
 
 export const App = () => {
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+		<div className="flex flex-col items-center">
 			Hello team hackathon!!!
-			<Link to="/about">About us</Link>
+			<Link className="text-cyan-800" to="/about">
+				About us
+			</Link>
 		</div>
 	);
 };
