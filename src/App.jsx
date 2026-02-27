@@ -1,10 +1,15 @@
-import { Link } from 'react-router';
+import { Link, Outlet } from 'react-router';
+import { Navbar } from './components';
 
 export const App = () => {
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+		<div className="flex flex-col items-center">
+			<Navbar />
 			Hello team hackathon!!!
-			<Link to="/about">About us</Link>
+			<Link className="text-cyan-800" to="/about">
+				About us
+			</Link>
+			<Outlet />
 		</div>
 	);
 };
