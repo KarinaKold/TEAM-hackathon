@@ -1,34 +1,6 @@
+import { Link } from 'react-router';
 import { Dropdown } from '../components';
-
-const MEMBERS = [
-	{
-		id: 1,
-		name: 'Карина',
-		age: '',
-		img: '',
-		descr: '',
-		contacts: '',
-		role: '',
-	},
-	{
-		id: 2,
-		name: 'Мария',
-		age: '',
-		img: '',
-		descr: '',
-		contacts: '',
-		role: '',
-	},
-	{
-		id: 3,
-		name: 'Максим',
-		age: '',
-		img: '',
-		descr: '',
-		contacts: '',
-		role: '',
-	},
-];
+import { MEMBERS } from '../data';
 
 export const HomePage = () => {
 	return (
@@ -41,13 +13,14 @@ export const HomePage = () => {
 			<section className="bg-white pl-6 pb-6 rounded-lg shadow-md">
 				<h2 className="text-2xl font-semibold">Наша команда</h2>
 				<div className="py-1">
-					{MEMBERS.map((member) => (
-						<a
-							href="#"
+					{MEMBERS.map(({ id, name }) => (
+						<Link
+							to={`/member/${id}`}
+							key={id}
 							className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
 						>
-							{member.name}
-						</a>
+							<h5>{name}</h5>
+						</Link>
 					))}
 				</div>
 			</section>
