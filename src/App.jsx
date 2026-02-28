@@ -1,14 +1,17 @@
-import { Link } from 'react-router';
-import { Breadcrumbs } from './components/breadcrumps/Breadcrumbs';
+
+import { Outlet } from 'react-router';
+import { Navbar } from './components';
 
 export const App = () => {
 	return (
-		<div className="flex flex-col items-center">
-			Hello team hackathon!!!
-			<Link className="text-cyan-800" to="/about">
-				About us
-			</Link>
-			<br />
-		</div>
+		<>
+			<header className="flex flex-col items-center">
+				<div className="bg-blue-600 py-2 flex w-screen justify-between items-center">
+					<h1 className="text-white text-4xl font-bold">TEAM</h1>
+					<Navbar />
+				</div>
+			</header>
+			<Outlet />
+		</>
 	);
 };
