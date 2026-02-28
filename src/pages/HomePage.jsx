@@ -1,15 +1,36 @@
-import { Outlet } from 'react-router';
-import { Dropdown, Navbar } from '../components';
+import { Dropdown } from '../components';
 
 export const HomePage = () => {
 	return (
-		<div className="flex flex-col items-center">
-			<div className="bg-blue-600 py-2 flex w-screen justify-between items-center">
-				<h1 className="text-white text-4xl font-bold">TEAM</h1>
-				<Navbar />
-			</div>
-			<Dropdown />
-			<Outlet />
-		</div>
+		<main className="container mx-auto">
+			<section className="bg-white p-6 rounded-lg shadow-md">
+				<h2 className="text-2xl font-semibold">О команде</h2>
+				<Dropdown />
+			</section>
+			<br />
+			<section className="bg-white pl-6 pb-6 rounded-lg shadow-md">
+				<h2 className="text-2xl font-semibold">Наша команда</h2>
+				<div className="py-1">
+					<a
+						href="#"
+						className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+					>
+						Карина - Тимлид
+					</a>
+					<a
+						href="#"
+						className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+					>
+						Мария - Фронтенд разработчик
+					</a>
+					<a
+						href="#"
+						className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+					>
+						Максим - Фронтенд разработчик
+					</a>
+				</div>
+			</section>
+		</main>
 	);
 };
