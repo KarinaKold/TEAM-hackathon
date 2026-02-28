@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { Breadcrumbs } from './components/breadcrumps/Breadcrumbs';
 
 export const App = () => {
 	return (
@@ -7,6 +8,7 @@ export const App = () => {
 			<Link className="text-cyan-800" to="/about">
 				About us
 			</Link>
+			<br />
 		</div>
 	);
 };
