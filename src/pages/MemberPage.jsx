@@ -7,7 +7,7 @@ import { Breadcrumbs, FavButton, Slider, UserBadge } from '../components';
 export const MemberPage = () => {
 	const { id } = useParams();
 	const member = MEMBERS.find((pers) => pers.id === parseInt(id));
-	const { name, age, img, descr, social, work, badge } = member;
+	const { name, age, img, descr, social, work, badge, projects } = member;
 
 	return (
 		<>
@@ -92,6 +92,7 @@ export const MemberPage = () => {
 				</div>
 				<Slider />
 			</div>
+			<Slider projects={projects} />
 		</>
 	);
 };

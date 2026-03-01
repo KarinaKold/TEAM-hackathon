@@ -9,6 +9,11 @@ export const MEMBERS = [
 			telegram: 'https://t.me/karinakold',
 			github: 'https://github.com/KarinaKold',
 		},
+		projects: [
+			'https://github.com/KarinaKold/booking-app',
+			'https://github.com/KarinaKold/JS2020Q3',
+		],
+
 		progress: [
 			{ technology: 'HTML', percentage: 100 },
 			{ technology: 'CSS', percentage: 95 },
@@ -25,18 +30,23 @@ export const MEMBERS = [
 	{
 		id: 2,
 		name: 'Мария Юран',
-		age: '',
+		age: '37',
 		img: 'https://avatars.githubusercontent.com/u/148201537?v=4',
-		descr: 'Фронтенд разработчик',
+		descr: 'Высшее образование по специальности менеджер-культуролог. Крупье со стажем работы более 10 лет в разных странах. Мама и домохозяйка. Изучаю фронтэнд-программирование. ',
 		social: {
 			telegram: 'https://t.me/Ma_ria_2506',
 			github: 'https://github.com/MaVaYuran',
 		},
+		projects: [
+			'https://github.com/MaVaYuran/hw_class_connect',
+			'https://github.com/MaVaYuran/hw_redux-thunk',
+			'https://github.com/MaVaYuran/cursor-site',
+		],
 		progress: [
 			{ technology: 'HTML', percentage: 100 },
-			{ technology: 'CSS', percentage: 90 },
+			{ technology: 'CSS', percentage: 75 },
 			{ technology: 'React', percentage: 80 },
-			{ technology: 'Node.js', percentage: 60 },
+			{ technology: 'Node.js', percentage: 20 },
 		],
 		work: 'Фронтенд разработчик командного проекта',
 		badge: [
@@ -55,6 +65,10 @@ export const MEMBERS = [
 			telegram: 'https://t.me/kodrrrr',
 			github: 'https://github.com/Maksim-Tambovtsev',
 		},
+		projects: [
+			'https://github.com/Maksim-Tambovtsev/home-w',
+			'https://github.com/Maksim-Tambovtsev/old-project',
+		],
 		progress: [
 			{ technology: 'HTML', percentage: 100 },
 			{ technology: 'CSS', percentage: 90 },
