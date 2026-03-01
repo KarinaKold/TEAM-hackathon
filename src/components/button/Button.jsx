@@ -20,7 +20,7 @@ export const Button = ({
 		<button
 			onClick={onClick}
 			type={type}
-			className={`text-white ${buttonColor} ${borderRadiusType} py-1.5 px-3 focus:outline-none`}
+			className={`cursor-pointer text-white ${buttonColor} ${borderRadiusType} py-1.5 px-3 focus:outline-none`}
 		>
 			{children}
 		</button>
