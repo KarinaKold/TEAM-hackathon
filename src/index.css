@@ -2,5 +2,14 @@
 
 * {
 	box-sizing: border-box;
-	margin: 0 auto;
+}
+
+#root,
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
 }
