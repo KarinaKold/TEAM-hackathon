@@ -90,9 +90,8 @@ export const MemberPage = () => {
 						</div>
 					</div>
 				</div>
-				<Slider />
+				<Slider projects={projects} />
 			</div>
-			<Slider projects={projects} />
 		</>
 	);
 };
