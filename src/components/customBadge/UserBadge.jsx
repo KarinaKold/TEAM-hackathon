@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserBadge = ({ color, content }) => {
+export const UserBadge = ({ color, content }) => {
 	const baseClasses = 'px-2.5 py-0.5 rounded text-xs font-medium text-white shadow-sm';
 
 	const colorClasses = {
@@ -24,5 +23,3 @@ UserBadge.propTypes = {
 	color: PropTypes.string,
 	content: PropTypes.string.isRequired,
 };
-
-export default UserBadge;

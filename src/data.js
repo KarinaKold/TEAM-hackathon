@@ -24,13 +24,13 @@ export const MEMBERS = [
 	},
 	{
 		id: 2,
-		name: 'Мария',
+		name: 'Мария Юран',
 		age: '',
 		img: 'https://avatars.githubusercontent.com/u/148201537?v=4',
 		descr: 'Фронтенд разработчик',
 		social: {
-			telegram: 'https://t.me/',
-			github: 'https://github.com/',
+			telegram: 'https://t.me/Ma_ria_2506',
+			github: 'https://github.com/MaVaYuran',
 		},
 		progress: [
 			{ technology: 'HTML', percentage: 100 },
