@@ -1,35 +1,33 @@
+
 import Badge from '../components/customBadge/UserBadge';
 import ProgressBar from '../components/skillBar/SkillBar';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MEMBERS } from '../data';
-import { Breadcrumbs, Button } from '../components';
+import { Breadcrumbs, Button, Slider, UserBadge } from '../components';
+import { useFavorites } from '../hooks/useFavorites';
+import { getFromStorage } from '../utils';
 
 export const MemberPage = () => {
 	const { id } = useParams();
+
 	const member = MEMBERS.find((pers) => pers.id === parseInt(id));
-	const { name, age, img, descr, social, work } = member;
+	const { name, age, img, descr, social, work, badge } = member;
 
 	const [isFavorite, setIsFavorite] = useState(false);
+	const { addFavorite, removeFavorite } = useFavorites();
 
 	useEffect(() => {
-		const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
+		const favorites = getFromStorage('favorites');
 		setIsFavorite(favorites.some((fav) => fav.id === member.id));
 	}, [member.id]);
 
 	const toggleFavorite = () => {
-		const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
 		if (isFavorite) {
-			const updatedFavorites = favorites.filter((fav) => fav.id !== member.id);
-
-			localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+			removeFavorite(member.id); 
 			setIsFavorite(false);
 		} else {
-			favorites.push(member);
-
-			localStorage.setItem('favorites', JSON.stringify(favorites));
+			addFavorite(member);
 			setIsFavorite(true);
 		}
 	};
@@ -44,7 +42,7 @@ export const MemberPage = () => {
 					<img
 						src={img}
 						alt={name}
-						className="rounded-full mb-4 border-4 border-blue-500 shadow-md"
+						className="w-100 h-100 rounded-full mb-4 border-4 border-blue-500 shadow-md"
 					/>
 				</div>
 				<div className="flex justify-center pl-86">
@@ -114,7 +112,9 @@ export const MemberPage = () => {
 							))}
 						</div>
 					</div>
+
 				</div>
+				<Slider />
 			</div>
 		</>
 	);
