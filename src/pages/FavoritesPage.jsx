@@ -1,3 +1,9 @@
+import { Breadcrumbs } from '../components';
+
 export const FavoritesPage = () => {
-	return <div>Favorites</div>;
+	return (
+		<div className="block p-6">
+			<Breadcrumbs />
+		</div>
+	);
 };
