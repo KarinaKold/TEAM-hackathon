@@ -1,14 +1,13 @@
 // import Progress from './Progress';
-// import Badge from './Badge';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MEMBERS } from '../data';
-import { Breadcrumbs, Button } from '../components';
+import { Breadcrumbs, Button, UserBadge } from '../components';
 
 export const MemberPage = () => {
 	const { id } = useParams();
 	const member = MEMBERS.find((pers) => pers.id === parseInt(id));
-	const { name, age, img, descr, social, work } = member;
+	const { name, age, img, descr, social, work, badge } = member;
 
 	const [isFavorite, setIsFavorite] = useState(false);
 
@@ -44,7 +43,7 @@ export const MemberPage = () => {
 					<img
 						src={img}
 						alt={name}
-						className="rounded-full mb-4 border-4 border-blue-500 shadow-md"
+						className="w-100 h-100 rounded-full mb-4 border-4 border-blue-500 shadow-md"
 					/>
 				</div>
 				<div className="flex justify-center pl-86">
@@ -58,7 +57,6 @@ export const MemberPage = () => {
 					</h3>
 					<p className="text-gray-600 text-lg">Возраст: {age}</p>
 				</div>
-
 				<p className="w-2xl font-semibold text-gray-700">{descr}</p>
 				<div className="w-3xs space-y-2">
 					<p className="underline">Follow me:</p>
@@ -80,6 +78,12 @@ export const MemberPage = () => {
 							GitHub
 						</a>
 					</div>
+				</div>
+				<div className="flex gap-2">
+					{badge &&
+						badge.map((b, index) => (
+							<UserBadge key={index} color={b.color} content={b.text} />
+						))}
 				</div>
 				<div className="mt-2 p-4 bg-gray-100 rounded-lg shadow-md">
 					<h4 className="text-xl font-bold text-gray-800">
