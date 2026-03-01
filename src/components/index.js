@@ -4,3 +4,4 @@ export * from './dropdown/Dropdown';
 export * from './navbar/Navbar';
 export * from './slider/Slider';
 export * from './customBadge/UserBadge';
+export * from './favButton/FavButton';

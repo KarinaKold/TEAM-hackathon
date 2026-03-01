@@ -11,7 +11,7 @@ export const FavoritesPage = () => {
 			</div>
 			<div className="m-8">
 				{favorites.length === 0 ? (
-					<p>No favorites</p>
+					<p>No favorites yet</p>
 				) : (
 					favorites.map((member) => (
 						<div key={member.id} className="member-card">
