@@ -66,16 +66,20 @@ export const MEMBERS = [
 			github: 'https://github.com/Maksim-Tambovtsev',
 		},
 		projects: [
-			'https://github.com/Maksim-Tambovtsev/home-w',
-			'https://github.com/Maksim-Tambovtsev/old-project',
+			'https://github.com/KarinaKold/TEAM-hackathon',
+			'https://github.com/cod3minerz/contextMenu-hackathon',
 		],
 		progress: [
-			{ technology: 'HTML', percentage: 100 },
-			{ technology: 'CSS', percentage: 90 },
-			{ technology: 'React', percentage: 80 },
-			{ technology: 'Node.js', percentage: 60 },
+			{ technology: 'HTML', percentage: 90 },
+			{ technology: 'CSS', percentage: 80 },
+			{ technology: 'React', percentage: 40 },
+			{ technology: 'Node.js', percentage: 27 },
 		],
-		work: 'Разработчик UI-компонентов ',
+		work: [
+			'Разработка UI-компонентов: Создал библиотеку переиспользуемых элементов, включая кастомные бейджи (UserBadge) и прогресс-бары навыков (SkillBar).',
+			'Проектирование интерфейса: Реализовал адаптивную верстку страницы участника с разделами «О себе», «Связь» и «Навыки».',
+			'Интеграция данных: Настроил динамическое отображение уровней владения технологиями (HTML, CSS, React) с использованием цветовой индикации.',
+		],
 		badge: [
 			{ text: 'Frontend', color: 'blue' },
 			{ text: 'QA Engineer', color: 'green' },
