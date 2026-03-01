@@ -1,20 +1,8 @@
-import { useEffect, useState } from 'react';
 import { Breadcrumbs, Button } from '../components';
+import { useFavorites } from '../hooks/useFavorites';
 
 export const FavoritesPage = () => {
-	const [favorites, setFavorites] = useState([]);
-
-	useEffect(() => {
-		const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-		setFavorites(storedFavorites);
-	}, []);
-
-	const removeFavorite = (id) => {
-		const updatedFavorites = favorites.filter((fav) => fav.id !== id);
-
-		localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-		setFavorites(updatedFavorites);
-	};
+	const { favorites, removeFavorite } = useFavorites();
 
 	return (
 		<>
@@ -23,7 +11,7 @@ export const FavoritesPage = () => {
 			</div>
 			<div className="m-8">
 				{favorites.length === 0 ? (
-					<p>No favorites</p>
+					<p>No favorites yet</p>
 				) : (
 					favorites.map((member) => (
 						<div key={member.id} className="member-card">
