@@ -12,7 +12,7 @@ export const Dropdown = () => {
 		<div className="relative inline-block">
 			<button
 				onClick={toggleDropdown}
-				className="pt-3 text-blue-500 focus:outline-none"
+				className="cursor-pointer pt-3 text-blue-500 focus:outline-none"
 			>
 				<svg
 					className={`w-5 h-5 duration-300 -rotate-90 ${isOpen ? 'rotate-0' : ''}`}
