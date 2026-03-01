@@ -7,7 +7,7 @@ export const Breadcrumbs = () => {
 
 	return (
 		<nav>
-			<ol className="flex space-x-2 text-gray-600">
+			<ol className="absolute flex p-1 text-gray-600 text-xl">
 				<li>
 					<Link to="/" className="text-gray-500 hover:text-gray-800">
 						Home
