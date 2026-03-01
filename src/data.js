@@ -16,7 +16,11 @@ export const MEMBERS = [
 			{ technology: 'Node.js', percentage: 60 },
 		],
 		work: 'Тимлид и фронтенд разработчик командного проекта',
-		badge: 'Тимлид',
+		badge: [
+			{ text: 'Team Lead', color: 'indigo' },
+			{ text: 'Frontend', color: 'blue' },
+			{ text: 'UI/UX', color: 'gold' },
+		],
 	},
 	{
 		id: 2,
@@ -35,7 +39,11 @@ export const MEMBERS = [
 			{ technology: 'Node.js', percentage: 60 },
 		],
 		work: 'Фронтенд разработчик командного проекта',
-		badge: '',
+		badge: [
+			{ text: 'Frontend', color: 'blue' },
+			{ text: 'QA Engineer', color: 'green' },
+			{ text: 'UI/UX', color: 'gold' },
+		],
 	},
 	{
 		id: 3,
@@ -54,6 +62,10 @@ export const MEMBERS = [
 			{ technology: 'Node.js', percentage: 60 },
 		],
 		work: 'Разработчик UI-компонентов ',
-		badge: 'Разработчик',
+		badge: [
+			{ text: 'Frontend', color: 'blue' },
+			{ text: 'QA Engineer', color: 'green' },
+			{ text: 'UI/UX', color: 'gold' },
+		],
 	},
 ];
