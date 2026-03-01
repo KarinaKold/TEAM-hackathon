@@ -1,33 +1,11 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MEMBERS } from '../data';
-import { Breadcrumbs, Button, Slider, UserBadge } from '../components';
-import { useFavorites } from '../hooks/useFavorites';
-import { getFromStorage } from '../utils';
+import { Breadcrumbs, FavButton, Slider, UserBadge } from '../components';
 
 export const MemberPage = () => {
 	const { id } = useParams();
-
 	const member = MEMBERS.find((pers) => pers.id === parseInt(id));
 	const { name, age, img, descr, social, work, badge } = member;
-
-	const [isFavorite, setIsFavorite] = useState(false);
-	const { addFavorite, removeFavorite } = useFavorites();
-
-	useEffect(() => {
-		const favorites = getFromStorage('favorites');
-		setIsFavorite(favorites.some((fav) => fav.id === member.id));
-	}, [member.id]);
-
-	const toggleFavorite = () => {
-		if (isFavorite) {
-			removeFavorite(member.id);
-			setIsFavorite(false);
-		} else {
-			addFavorite(member);
-			setIsFavorite(true);
-		}
-	};
 
 	return (
 		<>
@@ -39,14 +17,10 @@ export const MemberPage = () => {
 					<img
 						src={img}
 						alt={name}
-						className="w-100 h-100 rounded-full mb-4 border-4 border-blue-500 shadow-md"
+						className="w-100 h-100 rounded-full border-4 border-blue-500 shadow-md"
 					/>
 				</div>
-				<div className="flex justify-center pl-86">
-					<Button onClick={toggleFavorite} color={isFavorite ? 'blue' : 'gray'}>
-						{isFavorite ? 'From favorites' : 'To favorites'}
-					</Button>
-				</div>
+				<FavButton member={member} />
 				<div className="text-center space-y-4">
 					<h3 className="text-3xl font-bold text-gradient bg-clip-text text-transparent bg-linear-to-r from-purple-600 to-blue-400">
 						{name}
