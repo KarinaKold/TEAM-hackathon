@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MEMBERS } from '../data';
-import { Breadcrumbs, Button, UserBadge } from '../components';
+import { Breadcrumbs, Button, Slider, UserBadge } from '../components';
 
 export const MemberPage = () => {
 	const { id } = useParams();
 	const member = MEMBERS.find((pers) => pers.id === parseInt(id));
-	const { name, age, img, descr, social, work, badge } = member;
+	const { name, age, img, descr, social, work, badge, projects } = member;
 
 	const [isFavorite, setIsFavorite] = useState(false);
 
@@ -92,6 +92,7 @@ export const MemberPage = () => {
 					<p className="mt-2 text-gray-600">{work}</p>
 				</div>
 			</div>
+			<Slider projects={projects} />
 		</>
 	);
 };
