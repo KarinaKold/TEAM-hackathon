@@ -1,4 +1,4 @@
-import { Breadcrumbs, Button } from '../components';
+import { Breadcrumbs, Button, MemberCard } from '../components';
 import { useFavorites } from '../hooks/useFavorites';
 
 export const FavoritesPage = () => {
@@ -14,8 +14,8 @@ export const FavoritesPage = () => {
 					<p>No favorites yet</p>
 				) : (
 					favorites.map((member) => (
-						<div key={member.id} className="member-card">
-							<h2>{member.name}</h2>
+						<div key={member.id}>
+							<MemberCard member={member} />
 							<Button
 								onClick={() => removeFavorite(member.id)}
 								color={'red'}

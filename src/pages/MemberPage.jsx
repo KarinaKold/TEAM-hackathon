@@ -7,7 +7,7 @@ import { Breadcrumbs, FavButton, Slider, UserBadge } from '../components';
 export const MemberPage = () => {
 	const { id } = useParams();
 	const member = MEMBERS.find((pers) => pers.id === parseInt(id));
-	const { name, age, img, descr, social, work, badge, projects } = member;
+	const { name, age, img, descr, social, work, badge, projects, progress } = member;
 
 	return (
 		<>
@@ -32,7 +32,7 @@ export const MemberPage = () => {
 
 				<div className="mt-4 p-6 bg-gray-100 rounded-xl shadow-md">
 					<h4 className="text-lg font-bold text-gray-800 mb-2">О себе</h4>
-					<p className="text-gray-700 leading-relaxed">{member.descr}</p>
+					<p className="text-gray-700 leading-relaxed">{descr}</p>
 				</div>
 
 				{/* 1 block contact */}
@@ -41,13 +41,13 @@ export const MemberPage = () => {
 						<h4 className="font-bold text-gray-800 mb-3">Связь</h4>
 						<div className="flex flex-col gap-2">
 							<a
-								href={member.social?.telegram}
+								href={social?.telegram}
 								className="text-blue-500 hover:underline"
 							>
 								Telegram
 							</a>
 							<a
-								href={member.social?.github}
+								href={social?.github}
 								className="text-gray-700 hover:underline"
 							>
 								GitHub
@@ -61,7 +61,7 @@ export const MemberPage = () => {
 							Работа на проекте:
 						</h4>
 
-						<p className="text-gray-600 italic">"{member.work}"</p>
+						<p className="text-gray-600 italic">"{work}"</p>
 					</div>
 
 					{/* 3 block skills and badges */}
@@ -69,8 +69,8 @@ export const MemberPage = () => {
 						<h4 className="font-bold text-gray-800">Навыки и Роли</h4>
 
 						<div className="flex flex-wrap gap-2 mb-2">
-							{member.badge &&
-								member.badge.map((b, index) => (
+							{badge &&
+								badge.map((b, index) => (
 									<UserBadge
 										key={index}
 										color={b.color}
@@ -80,7 +80,7 @@ export const MemberPage = () => {
 						</div>
 
 						<div className="space-y-3">
-							{member.progress?.map((item, index) => (
+							{progress?.map((item, index) => (
 								<ProgressBar
 									key={index}
 									label={item.technology}
