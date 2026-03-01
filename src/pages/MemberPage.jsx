@@ -1,3 +1,6 @@
+
+import Badge from '../components/customBadge/UserBadge';
+import ProgressBar from '../components/skillBar/SkillBar';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MEMBERS } from '../data';
@@ -21,7 +24,7 @@ export const MemberPage = () => {
 
 	const toggleFavorite = () => {
 		if (isFavorite) {
-			removeFavorite(member.id);
+			removeFavorite(member.id); 
 			setIsFavorite(false);
 		} else {
 			addFavorite(member);
@@ -53,39 +56,63 @@ export const MemberPage = () => {
 					</h3>
 					<p className="text-gray-600 text-lg">Возраст: {age}</p>
 				</div>
-				<p className="w-2xl font-semibold text-gray-700">{descr}</p>
-				<div className="w-3xs space-y-2">
-					<p className="underline">Follow me:</p>
-					<div className="w-3xs flex space-x-4">
-						<a
-							href={social.telegram}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-xl text-blue-500 hover:text-blue-700 transition-colors duration-300"
-						>
-							Telegram
-						</a>
-						<a
-							href={social.github}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-xl text-blue-500 hover:text-blue-700 transition-colors duration-300"
-						>
-							GitHub
-						</a>
+
+				<div className="mt-4 p-6 bg-gray-100 rounded-xl shadow-md">
+					<h4 className="text-lg font-bold text-gray-800 mb-2">О себе</h4>
+					<p className="text-gray-700 leading-relaxed">{member.descr}</p>
+				</div>
+
+				{/* 1 block contact */}
+				<div className="mt-2 p-6 bg-gray-100 rounded-xl shadow-md flex flex-col md:flex-row gap-8 items-stretch">
+					<div className="md:w-1/5 flex flex-col">
+						<h4 className="font-bold text-gray-800 mb-3">Связь</h4>
+						<div className="flex flex-col gap-2">
+							<a
+								href={member.social?.telegram}
+								className="text-blue-500 hover:underline"
+							>
+								Telegram
+							</a>
+							<a
+								href={member.social?.github}
+								className="text-gray-700 hover:underline"
+							>
+								GitHub
+							</a>
+						</div>
 					</div>
-				</div>
-				<div className="flex gap-2">
-					{badge &&
-						badge.map((b, index) => (
-							<UserBadge key={index} color={b.color} content={b.text} />
-						))}
-				</div>
-				<div className="mt-2 p-4 bg-gray-100 rounded-lg shadow-md">
-					<h4 className="text-xl font-bold text-gray-800">
-						Описание работы на проекте:
-					</h4>
-					<p className="mt-2 text-gray-600">{work}</p>
+
+					{/* 2 block work project */}
+					<div className="md:w-2/5 border-l border-r border-gray-300 px-6">
+						<h4 className="font-bold text-gray-800 mb-2">
+							Работа на проекте:
+						</h4>
+
+						<p className="text-gray-600 italic">"{member.work}"</p>
+					</div>
+
+					{/* 3 block skills and badges */}
+					<div className="md:w-2/5 flex flex-col gap-4">
+						<h4 className="font-bold text-gray-800">Навыки и Роли</h4>
+
+						<div className="flex flex-wrap gap-2 mb-2">
+							{member.badge &&
+								member.badge.map((b, index) => (
+									<Badge key={index} color={b.color} content={b.text} />
+								))}
+						</div>
+
+						<div className="space-y-3">
+							{member.progress?.map((item, index) => (
+								<ProgressBar
+									key={index}
+									label={item.technology}
+									percentage={item.percentage}
+								/>
+							))}
+						</div>
+					</div>
+
 				</div>
 				<Slider />
 			</div>
