@@ -39,13 +39,13 @@ export const MEMBERS = [
 	},
 	{
 		id: 3,
-		name: 'Максим',
-		age: '',
+		name: 'Максим Тамбовцев',
+		age: '23',
 		img: 'https://avatars.githubusercontent.com/u/135017705?v=4',
-		descr: 'Фронтенд разработчик',
+		descr: 'Фронтенд разработчик, сейчас активно изучасю React. В свободное время люблю путешествовать и готовить вкусную еду.',
 		social: {
-			telegram: 'https://t.me/',
-			github: 'https://github.com/',
+			telegram: 'https://t.me/kodrrrr',
+			github: 'https://github.com/Maksim-Tambovtsev',
 		},
 		progress: [
 			{ technology: 'HTML', percentage: 100 },
@@ -53,7 +53,7 @@ export const MEMBERS = [
 			{ technology: 'React', percentage: 80 },
 			{ technology: 'Node.js', percentage: 60 },
 		],
-		work: 'Фронтенд разработчик командного проекта',
-		badge: '',
+		work: 'Разработчик UI-компонентов ',
+		badge: 'Разработчик',
 	},
 ];
