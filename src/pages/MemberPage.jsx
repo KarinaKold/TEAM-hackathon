@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MEMBERS } from '../data';
-import { Breadcrumbs, Button, UserBadge } from '../components';
+import { Breadcrumbs, Button, Slider, UserBadge } from '../components';
 
 export const MemberPage = () => {
 	const { id } = useParams();
@@ -91,6 +91,7 @@ export const MemberPage = () => {
 					</h4>
 					<p className="mt-2 text-gray-600">{work}</p>
 				</div>
+				<Slider />
 			</div>
 		</>
 	);
