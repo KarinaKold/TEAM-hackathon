@@ -1,4 +1,3 @@
-import Badge from '../components/customBadge/UserBadge';
 import ProgressBar from '../components/skillBar/SkillBar';
 
 import { useParams } from 'react-router';
@@ -72,7 +71,11 @@ export const MemberPage = () => {
 						<div className="flex flex-wrap gap-2 mb-2">
 							{member.badge &&
 								member.badge.map((b, index) => (
-									<Badge key={index} color={b.color} content={b.text} />
+									<UserBadge
+										key={index}
+										color={b.color}
+										content={b.text}
+									/>
 								))}
 						</div>
 
@@ -86,7 +89,6 @@ export const MemberPage = () => {
 							))}
 						</div>
 					</div>
-
 				</div>
 				<Slider />
 			</div>

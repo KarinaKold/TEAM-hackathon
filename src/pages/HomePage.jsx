@@ -1,7 +1,6 @@
 import { Link } from 'react-router';
 import { Dropdown, UserBadge } from '../components';
 import { MEMBERS } from '../data';
-import Badge from '../components/customBadge/UserBadge';
 
 export const HomePage = () => {
 	return (
