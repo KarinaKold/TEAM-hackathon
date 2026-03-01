@@ -1,4 +1,6 @@
+import { Link } from 'react-router';
 import { Dropdown } from '../components';
+import { MEMBERS } from '../data';
 
 export const HomePage = () => {
 	return (
@@ -11,24 +13,15 @@ export const HomePage = () => {
 			<section className="bg-white pl-6 pb-6 rounded-lg shadow-md">
 				<h2 className="text-2xl font-semibold">Наша команда</h2>
 				<div className="py-1">
-					<a
-						href="#"
-						className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-					>
-						Карина - Тимлид
-					</a>
-					<a
-						href="#"
-						className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-					>
-						Мария - Фронтенд разработчик
-					</a>
-					<a
-						href="#"
-						className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-					>
-						Максим - Фронтенд разработчик
-					</a>
+					{MEMBERS.map(({ id, name }) => (
+						<Link
+							to={`/member/${id}`}
+							key={id}
+							className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+						>
+							<h5>{name}</h5>
+						</Link>
+					))}
 				</div>
 			</section>
 		</main>

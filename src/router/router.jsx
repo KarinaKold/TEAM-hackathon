@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router';
-import { FavoritesPage, HomePage } from '../pages';
-import { NotFound } from '../pages/NotFound';
+import { FavoritesPage, HomePage, MemberPage, NotFoundPage } from '../pages';
 import { App } from '../App';
 
 export const router = createBrowserRouter([
@@ -10,11 +9,11 @@ export const router = createBrowserRouter([
 		children: [
 			{ path: '/', element: <HomePage /> },
 			{ path: '/favorites', element: <FavoritesPage /> },
-			{ path: '/member/:id', element: <></> },
+			{ path: '/member/:id', element: <MemberPage /> },
 		],
 	},
 	{
 		path: '*',
-		element: <NotFound />,
+		element: <NotFoundPage />,
 	},
 ]);
